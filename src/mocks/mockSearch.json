@@ -1,0 +1,152 @@
+[
+    {
+      "Version": 1,
+      "Key": "60449",
+      "Type": "City",
+      "Rank": 10,
+      "LocalizedName": "Santiago de Chile",
+      "Country": {
+        "ID": "CL",
+        "LocalizedName": "Chile"
+      },
+      "AdministrativeArea": {
+        "ID": "RM",
+        "LocalizedName": "Región Metropolitana de Santiago"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "6018",
+      "Type": "City",
+      "Rank": 31,
+      "LocalizedName": "Santiago del Estero",
+      "Country": {
+        "ID": "AR",
+        "LocalizedName": "Argentina"
+      },
+      "AdministrativeArea": {
+        "ID": "G",
+        "LocalizedName": "Santiago del Estero"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "125885",
+      "Type": "City",
+      "Rank": 31,
+      "LocalizedName": "Santiago de Cuba",
+      "Country": {
+        "ID": "CU",
+        "LocalizedName": "Cuba"
+      },
+      "AdministrativeArea": {
+        "ID": "13",
+        "LocalizedName": "Santiago de Cuba"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "125768",
+      "Type": "City",
+      "Rank": 31,
+      "LocalizedName": "Santiago de los Caballeros",
+      "Country": {
+        "ID": "DO",
+        "LocalizedName": "República Dominicana"
+      },
+      "AdministrativeArea": {
+        "ID": "25",
+        "LocalizedName": "Santiago"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "3583792",
+      "Type": "City",
+      "Rank": 35,
+      "LocalizedName": "Santiago de Querétaro",
+      "Country": {
+        "ID": "MX",
+        "LocalizedName": "México"
+      },
+      "AdministrativeArea": {
+        "ID": "QUE",
+        "LocalizedName": "Querétaro"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "307771",
+      "Type": "City",
+      "Rank": 41,
+      "LocalizedName": "Santiago de Compostela",
+      "Country": {
+        "ID": "ES",
+        "LocalizedName": "España"
+      },
+      "AdministrativeArea": {
+        "ID": "GA",
+        "LocalizedName": "Galicia"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "234346",
+      "Type": "City",
+      "Rank": 45,
+      "LocalizedName": "Santiago Ixcuintla",
+      "Country": {
+        "ID": "MX",
+        "LocalizedName": "México"
+      },
+      "AdministrativeArea": {
+        "ID": "NAY",
+        "LocalizedName": "Nayarit"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "261289",
+      "Type": "City",
+      "Rank": 51,
+      "LocalizedName": "Santiago de Veraguas",
+      "Country": {
+        "ID": "PA",
+        "LocalizedName": "Panamá"
+      },
+      "AdministrativeArea": {
+        "ID": "9",
+        "LocalizedName": "Veraguas"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "302256",
+      "Type": "City",
+      "Rank": 52,
+      "LocalizedName": "Santiago de la Espada",
+      "Country": {
+        "ID": "ES",
+        "LocalizedName": "España"
+      },
+      "AdministrativeArea": {
+        "ID": "AN",
+        "LocalizedName": "Andalucía"
+      }
+    },
+    {
+      "Version": 1,
+      "Key": "239575",
+      "Type": "City",
+      "Rank": 55,
+      "LocalizedName": "Santiago",
+      "Country": {
+        "ID": "MX",
+        "LocalizedName": "México"
+      },
+      "AdministrativeArea": {
+        "ID": "NLE",
+        "LocalizedName": "Nuevo León"
+      }
+    }
+  ]
