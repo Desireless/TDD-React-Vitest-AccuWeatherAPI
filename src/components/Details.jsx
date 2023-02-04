@@ -6,6 +6,7 @@ const Details = (props) => {
     const { code, country, city } = props;
     const [currentWeather, setCurrentWeather] = useState();
     const [error, setError] = useState({ hasError: false });
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
       getCurrentWeather(code).then(
@@ -14,6 +15,8 @@ const Details = (props) => {
         }
       ).catch((err) => {
         handleError(err)
+      }).finally(() => {
+        setLoading(false);
       })
     }, [])
 
@@ -22,23 +25,27 @@ const Details = (props) => {
     }
 
     return (
-        <>
+        <aside className='box'>
             <h2>Current Weather</h2>
             {error.hasError && <div>{error.message}</div>}
+
+            {loading && <p>Loading...</p>}
+
             {currentWeather?.map((weather) => {
+
+                let icon = weather.WeatherIcon < 10 ? `0${weather.WeatherIcon}` : weather.WeatherIcon;
+
                 return (
                     <div key={weather.EpochTime}>
-                        <h3 key={weather.Temperature.Metric.Value}>{weather.Temperature.Metric.Value} {weather.Temperature.Metric.Unit}</h3>
-                        <p key={weather.WeatherText}>{weather.WeatherText}</p>
-                        <p key={city}>{city}, {country}</p>
+                        <img src={`https://developer.accuweather.com/sites/default/files/${icon}-s.png`} alt={weather.WeatherText} />
+                        <h3 >{weather.Temperature.Metric.Value} {weather.Temperature.Metric.Unit}</h3>
+                        <p >{weather.WeatherText}</p>
+                        <p >{city}, {country}</p>
                     </div>
                 )
             })}
-            {/* <h3>{currentWeather?.Temperature.Metric.Value} {currentWeather?.Temperature.Metric.Unit}</h3>
-            <p>{currentWeather?.WeatherText}</p>
-            <p>{city}, {country}</p> */}
 
-        </>
+        </aside>
     )
 }
 

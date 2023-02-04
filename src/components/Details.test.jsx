@@ -58,5 +58,18 @@ describe("Details", () => {
         expect(error).toBeDefined();
     })
 
+    test('should display a loading message', async () => {
+        vi.spyOn(window, "fetch").mockResolvedValueOnce({
+            ok: true,
+            json: async () => mockCondition,
+        });
+
+        render(<Details code={60449} country={"Chile"} city={"Santiago de Chile"} />)
+
+        const loading = await screen.findByText(/loading/i);
+
+        expect(loading).toBeDefined();
+    })
+
 
 })

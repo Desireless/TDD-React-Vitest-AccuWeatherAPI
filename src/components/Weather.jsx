@@ -46,8 +46,9 @@ const Clima = () => {
 
   return (
     <div className='container'>
-      {error.hasError && <div>{error.message}</div>}
       <h1>Weather App</h1>
+      {error.hasError && <div>{error.message}</div>}
+        {detailState.showDetail && <Details code={detailState.key} country={detailState.country} city={detailState.city} />}
 
       <form onSubmit={handleSubmit}>
         <input
@@ -63,14 +64,17 @@ const Clima = () => {
 
       {loading && <div>Loading...</div>}
 
-      {cities?.map(city => (
-        <li key={city.Key}
-          onClick={() => handleListClick(city)}>
-          {city.LocalizedName} - {city.Country.LocalizedName}
-        </li>
-      ))}
+      <section className='container__ciudades'>
 
-      {detailState.showDetail && <Details code={detailState.key} country={detailState.country} city={detailState.city} />}
+        {cities?.map(city => (
+          <li key={city.Key}
+            onClick={() => handleListClick(city)}>
+            <strong>{city.Country.LocalizedName}</strong> - {city.LocalizedName}
+          </li>
+        ))}
+      </section>
+
+
     </div>
   )
 }
