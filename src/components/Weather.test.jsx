@@ -1,4 +1,4 @@
-import Clima from "./Clima";
+import Weather from "./Weather";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import {describe, test, expect, afterEach, vitest, beforeEach, beforeAll, vi} from 'vitest'
 import mockSearch from "../mocks/mockSearch.json";
@@ -11,18 +11,18 @@ describe("Weather", () => {
     
 
     test('should render correctly', () => {
-        const isRendered = render(<Clima/>);
+        const isRendered = render(<Weather/>);
         expect(isRendered).toBeTruthy();
     })
 
     test('should show "Weather App" tittle all the time', () => {
         render(
-        <Clima />)
+        <Weather />)
         expect(screen.getByText("Weather App")).toBeDefined();
     })
 
     test('should render the form elements', () => {
-        render(<Clima/>)
+        render(<Weather/>)
         const input = screen.getByRole('textbox', {name: "search input"});
         const button = screen.getByRole('button', {name: /search/i});
 
@@ -52,7 +52,7 @@ describe("Weather", () => {
             json: async () => mockSearch,
         })
 
-        render(<Clima/>);
+        render(<Weather/>);
 
         const input = screen.getByRole('textbox', {name: "search input"});
         const button = screen.getByRole('button', {name: /search/i});
@@ -68,7 +68,7 @@ describe("Weather", () => {
     test('should display an error message when has a network error', async () => {
         vi.spyOn(window, "fetch").mockRejectedValueOnce(new Error("Network error"));
         
-        render(<Clima/>);
+        render(<Weather/>);
 
         const input = screen.getByRole('textbox', {name: "search input"});
         const button = screen.getByRole('button', {name: /search/i});
@@ -88,7 +88,7 @@ describe("Weather", () => {
             json: async () => mockSearch,
         })
 
-        render(<Clima/>);
+        render(<Weather/>);
 
         const input = screen.getByRole('textbox', {name: "search input"});
         const button = screen.getByRole('button', {name: /search/i});

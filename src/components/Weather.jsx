@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import { getLocation } from '.././api/getLocation.js';
+import { getLocation } from '../api/getLocation.js';
 import Details from './Details.jsx';
 
 const Clima = () => {
@@ -15,7 +15,8 @@ const Clima = () => {
   );
 
 
-  const handleSearch = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     getLocation(city)
       .then((data) => {
         setCities(data);
@@ -41,16 +42,18 @@ const Clima = () => {
     <div className='container'>
       {error.hasError && <div>{error.message}</div>}
       <h1>Weather App</h1>
-      <input
-        aria-label='search input'
-        type='text'
-        placeholder='Where do you live?'
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-      />
-      <button
-        onClick={handleSearch}
-      >Search</button>
+
+      <form onSubmit={handleSubmit}>
+        <input
+          aria-label='search input'
+          type='text'
+          placeholder='Where do you live?'
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+        />
+        <button
+        >Search</button>
+      </form>
 
       {cities?.map(city => (
         <li key={city.Key}
