@@ -103,5 +103,24 @@ describe("Weather", () => {
         
     })
 
+    test('should display a loading message when the API is fetching', async () => {
+        vi.spyOn(window, "fetch").mockResolvedValueOnce({
+            ok: true,
+            json: async () => mockSearch,
+        })
+
+        render(<Weather/>);
+
+        const input = screen.getByRole('textbox', {name: "search input"});
+        const button = screen.getByRole('button', {name: /search/i});
+
+        fireEvent.change(input, {target: {value: 'Santiago'}});
+        fireEvent.click(button);
+
+        const loading = await screen.findByText(/loading/i);
+
+        expect(loading).toBeDefined();
+    })
+
 
 });

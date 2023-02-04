@@ -6,6 +6,7 @@ const Clima = () => {
   const [cities, setCities] = useState([]);
   const [city, setCity] = useState('');
   const [error, setError] = useState({ hasError: false });
+  const [loading, setLoading] = useState(false);
   const [detailState, setDetailState] = useState({
     key: '',
     country: '',
@@ -17,11 +18,16 @@ const Clima = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    setLoading(true);
+
     getLocation(city)
       .then((data) => {
         setCities(data);
       }).catch((err) => {
         handleError(err)
+      }).finally(() => {
+        setLoading(false);
       })
   }
 
@@ -54,6 +60,8 @@ const Clima = () => {
         <button
         >Search</button>
       </form>
+
+      {loading && <div>Loading...</div>}
 
       {cities?.map(city => (
         <li key={city.Key}
