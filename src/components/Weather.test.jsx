@@ -1,6 +1,6 @@
 import Weather from "./Weather";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
-import {describe, test, expect, afterEach, vitest, beforeEach, beforeAll, vi} from 'vitest'
+import {describe, test, expect, afterEach, vi} from 'vitest'
 import mockSearch from "../mocks/mockSearch.json";
 
 describe("Weather", () => {

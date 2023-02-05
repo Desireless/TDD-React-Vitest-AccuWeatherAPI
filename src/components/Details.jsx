@@ -1,6 +1,6 @@
 import {React, useEffect, useState} from 'react'
 import { getCurrentWeather } from '../api/getCurrentWeather';
-import mockCondition from '../mocks/mockCondition.json';
+//import mockCondition from '../mocks/mockCondition.json';
 
 const Details = (props) => {
     const { code, country, city } = props;
@@ -18,7 +18,7 @@ const Details = (props) => {
       }).finally(() => {
         setLoading(false);
       })
-    }, [])
+    }, [currentWeather])
 
     const handleError = (err) => {
       setError({ hasError: true, message: err.message });

@@ -32,6 +32,7 @@ const Clima = () => {
   }
 
   const handleListClick = (e) => {
+
     setDetailState({
       key: e.Key,
       country: e.Country.LocalizedName,
