@@ -49,7 +49,8 @@ const Clima = () => {
     <div className='container'>
       <h1>Weather App</h1>
       {error.hasError && <div>{error.message}</div>}
-        {detailState.showDetail && <Details code={detailState.key} country={detailState.country} city={detailState.city} />}
+      
+      {detailState.showDetail && <Details code={detailState.key} country={detailState.country} city={detailState.city} />}
 
       <form onSubmit={handleSubmit}>
         <input

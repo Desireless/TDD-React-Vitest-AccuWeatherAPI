@@ -18,7 +18,7 @@ const Details = (props) => {
       }).finally(() => {
         setLoading(false);
       })
-    }, [currentWeather])
+    }, [code])
 
     const handleError = (err) => {
       setError({ hasError: true, message: err.message });
